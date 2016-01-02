@@ -1,6 +1,6 @@
 import sqlite3
 
-#use to empty shell for site.db
+#use to create empty shell for site.db
 
 with sqlite3.connect("site.db") as connection:
 	c = connection.cursor()
@@ -9,5 +9,5 @@ with sqlite3.connect("site.db") as connection:
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`title`	TEXT NOT NULL,
 	`content`	TEXT NOT NULL)""")
-	
 
+	c.execute('INSERT INTO posts (title, content) VALUES ("If you can read me", "sql.py has run correctly")')
