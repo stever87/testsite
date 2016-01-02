@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>A Brand New Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="/">Place Holder!</a></h2>
+      <hr>
+        {% with msgs = get_flashed_messages() %}
+        {% if msgs %}
+          {%- for msg in msgs %}
+            <div class="alert alert-success">
+              {{ msg }}
+            </div>
+          {% endfor -%}
+        {% endif %}
+      {% endwith %}
+      
+      {% block content %}
+      
+      {% endblock %}
+		<hr>
+    </div>
+
+  </body>
+</html>
