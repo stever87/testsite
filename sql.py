@@ -4,7 +4,7 @@ import sqlite3
 
 with sqlite3.connect("site.db") as connection:
 	c = connection.cursor()
-	c.execute("""DROP TABLE posts""")
+	#c.execute("""DROP TABLE posts""")
 	c.execute("""CREATE TABLE `posts` (
 	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`title`	TEXT NOT NULL,
